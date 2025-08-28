@@ -68,3 +68,15 @@ for (const call of callBtn) {
     setTextInNumber(restCoin, "coin");
   });
 }
+
+// copy button active;
+const copyBtns = document.getElementsByClassName("btn-copy");
+for (const copyBtn of copyBtns) {
+  copyBtn.addEventListener("click", function () {
+    const number = copyBtn.getAttribute("data-number");
+    navigator.clipboard.writeText(number);
+    const availableCopy = getTextInNumber("available-copy");
+    const totalCopy = availableCopy + 1;
+    setTextInNumber(totalCopy, "available-copy");
+  });
+}
