@@ -34,19 +34,37 @@ function getText(id) {
   return text;
 }
 
-//call button start:
-const btnNationalCall = document
-  .getElementById("btn-national-call")
-  .addEventListener("click", function () {
-    const nationalServiceName = getText("national-service");
-    const nationalNumber = getText("national-number");
+// //call button start:
+// const btnNationalCall = document
+//   .getElementById("btn-national-call")
+//   .addEventListener("click", function () {
+//     const nationalServiceName = getText("national-service");
+//     const nationalNumber = getText("national-number");
+//     const coin = getTextInNumber("coin");
+//     if (coin < 20) {
+//       alert("You do not have sufficient coin for call");
+//       return;
+//     }
+//     alert(`${nationalServiceName} ${nationalNumber}`);
+
+//     const restCoin = coin - 20;
+//     setTextInNumber(restCoin, "coin");
+//   });
+
+const callBtn = document.getElementsByClassName("btn-call");
+for (const call of callBtn) {
+  call.addEventListener("click", function () {
+    const serviceName = call.getAttribute("data-service");
+    const serviceNumber = call.getAttribute("data-number");
     const coin = getTextInNumber("coin");
     if (coin < 20) {
-      alert("You do not have sufficient coin for call");
+      alert(
+        "You do not have sufficient coin for call. Please refresh and get 100 coin for free!!"
+      );
       return;
     }
-    alert(`${nationalServiceName} ${nationalNumber}`);
-
+    alert(`You are calling ${serviceName} by ${serviceNumber}`);
     const restCoin = coin - 20;
     setTextInNumber(restCoin, "coin");
   });
+}
