@@ -28,3 +28,25 @@ for (const heart of whiteHeart) {
   });
 }
 // heart count end
+
+function getText(id) {
+  const text = document.getElementById(id).innerText;
+  return text;
+}
+
+//call button start:
+const btnNationalCall = document
+  .getElementById("btn-national-call")
+  .addEventListener("click", function () {
+    const nationalServiceName = getText("national-service");
+    const nationalNumber = getText("national-number");
+    const coin = getTextInNumber("coin");
+    if (coin < 20) {
+      alert("You do not have sufficient coin for call");
+      return;
+    }
+    alert(`${nationalServiceName} ${nationalNumber}`);
+
+    const restCoin = coin - 20;
+    setTextInNumber(restCoin, "coin");
+  });
