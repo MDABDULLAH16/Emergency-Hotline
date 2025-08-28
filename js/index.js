@@ -66,8 +66,29 @@ for (const call of callBtn) {
     alert(`You are calling ${serviceName} by ${serviceNumber}`);
     const restCoin = coin - 20;
     setTextInNumber(restCoin, "coin");
+    const time = new Date();
+    const rightTime = time.toLocaleTimeString();
+
+    const history = document.getElementById("history");
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = `<div
+              class="flex items-center justify-between bg-[#FAFAFA] rounded-lg p-4 my-4"
+            >
+              <div>
+                <h1 class="font-semibold">${serviceName}</h1>
+                <p>${serviceNumber}</p>
+              </div>
+              <p>${rightTime}</p>
+            </div>`;
+    history.appendChild(newHistory);
   });
 }
+
+//history clear
+document.getElementById("btn-clear").addEventListener("click", function () {
+  const history = document.getElementById("history");
+  history.innerText = "";
+});
 
 // copy button active;
 const copyBtns = document.getElementsByClassName("btn-copy");
