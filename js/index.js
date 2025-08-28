@@ -78,5 +78,7 @@ for (const copyBtn of copyBtns) {
     const availableCopy = getTextInNumber("available-copy");
     const totalCopy = availableCopy + 1;
     setTextInNumber(totalCopy, "available-copy");
+    const span = copyBtn.querySelector("span");
+    span.innerText = "Copied";
   });
 }
