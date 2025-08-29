@@ -25,6 +25,7 @@ for (const heart of whiteHeart) {
     const availableHeart = getTextInNumber("available-heart");
     const newHeart = availableHeart + 1;
     setTextInNumber(newHeart, "available-heart");
+    setTextInNumber(newHeart, "available-heart-2");
   });
 }
 // heart count end
@@ -66,6 +67,7 @@ for (const call of callBtn) {
     alert(`You are calling ${serviceName} by ${serviceNumber}`);
     const restCoin = coin - 20;
     setTextInNumber(restCoin, "coin");
+    setTextInNumber(restCoin, "coin-2");
     const time = new Date();
     const rightTime = time.toLocaleTimeString();
 
@@ -99,6 +101,7 @@ for (const copyBtn of copyBtns) {
     const availableCopy = getTextInNumber("available-copy");
     const totalCopy = availableCopy + 1;
     setTextInNumber(totalCopy, "available-copy");
+    setTextInNumber(totalCopy, "available-copy-2");
     const span = copyBtn.querySelector("span");
     span.innerText = "Copied";
   });
